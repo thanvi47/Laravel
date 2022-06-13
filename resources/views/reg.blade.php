@@ -9,7 +9,7 @@
 </head>
 <body>
 @include('nav')
-<form action="/customer" method="post">
+<form action="/customer" enctype="multipart/form-data " method="post">
     @csrf
 <input type="text"name="name" placeholder="Name" ><br>
     @error('name')
@@ -32,6 +32,12 @@
 <input type="Text"name="gender" placeholder="Gender M or F" ><br>
     @error('gender') {{$message}} @enderror
     <br>
+
+
+<lavel>file</lavel>
+    <input type="file" name="image" >
+
+
 <input type="submit"name="" placeholder="">
 </form>
 

@@ -27,3 +27,8 @@ Route::get('/customer',[CustomerController::class,'view']);
 Route::get('/customer/delete/{id}',[CustomerController::class,'delete']);
 Route::get('/update/{id}',[CustomerController::class,'update']);
 Route::post('/update_action/{id}',[CustomerController::class,'update_action']);
+Route::get('get',function (){
+   $session =session()->all();
+   p($session);
+});
+//Route::post('/customer',[CustomerController::class,'upload']);

@@ -17,9 +17,9 @@
 {{--   @section('view.layouts.main-section')--}}
 {{----}}
 @include('nav')
+{{--{{session()->get()}}--}}
 
-
-    <form action="/customer"method="post">
+    <form action="/customer" enctype="multipart/form-data " method="post">
 @csrf
         @php
   //       print_r($errors ->all());

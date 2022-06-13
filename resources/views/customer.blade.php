@@ -26,6 +26,8 @@
     <th>Number</th>
     <th>Gender</th>
     <th>Status</th>
+    <th>Date</th>
+    <th>Image</th>
     <th>Action</th>
     </thead>
     <tbody class="b">
@@ -33,6 +35,7 @@
     <tr class="b">
         <td>  {{$customers->name}}  </td>
         <td>  {{$customers->email}} </td>
+
         <td> {{$customers->phone_number}}   </td>
         <td>  @if($customers->gender=='M')Male
             @else Female
@@ -44,6 +47,8 @@
             @else Inactive
             @endif
         </td>
+        <td>  {{$customers->image}} </td>
+        <td>  {{$customers->updated_at}} </td>
         <td>
             <a href="{{url('/customer/delete')}}/{{$customers->id}}">
             <button class="btn btn-danger m-1">Delete</button>

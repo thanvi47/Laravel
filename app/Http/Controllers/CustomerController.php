@@ -13,13 +13,14 @@ class CustomerController extends Controller
         return view('reg');
     }
     public function store(Request $request)
-    {
+    { $request->file('image')->store('uploads');
         $request->validate(
             ['name'=>'required' ,
                 'email'=>'required|email',
                 'number'=>'required',
                 'password'=>'required'
             ]
+
         );
 
         $customers =new Customer;
@@ -29,6 +30,7 @@ class CustomerController extends Controller
         $customers->gender=$request['gender'];
 //        $customers->gender=$request['female'];
         $customers->password=md5($request['password']);
+        $customers->image=$request['image'];
         $customers ->save();
 
         return redirect('/customer');
@@ -75,4 +77,9 @@ class CustomerController extends Controller
 
 
     }
+
+    public function upload(Request $request){
+     $request->file('image')->store('uploads');
+    }
 }
+
