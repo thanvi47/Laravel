@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
+//use Illuminate\
 
 class CustomerController extends Controller
 {
@@ -13,11 +14,13 @@ class CustomerController extends Controller
         return view('reg');
     }
     public function store(Request $request)
-    { $request->file('image')->store('uploads');
+    {
+        $new_name= time().'tv.'.$request->file('image')->getClientOriginalExtension();
+        $request->file('image')->storeAs('uploads',$new_name);
         $request->validate(
             ['name'=>'required' ,
                 'email'=>'required|email',
-                'number'=>'required',
+                'number'=>'required|integer',
                 'password'=>'required'
             ]
 
@@ -78,8 +81,8 @@ class CustomerController extends Controller
 
     }
 
-    public function upload(Request $request){
-     $request->file('image')->store('uploads');
-    }
+//    public function upload(Request $request){
+//     $request->file('image')->store('uploads');
+//    }
 }
 

@@ -47,7 +47,8 @@
             @else Inactive
             @endif
         </td>
-        <td>  {{$customers->image}} </td>
+        <td>
+            <img src="{{url('uploads/1655234242tv.png')}}" alt=""> </td>
         <td>  {{$customers->updated_at}} </td>
         <td>
             <a href="{{url('/customer/delete')}}/{{$customers->id}}">

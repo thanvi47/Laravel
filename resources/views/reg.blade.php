@@ -9,7 +9,7 @@
 </head>
 <body>
 @include('nav')
-<form action="/customer" enctype="multipart/form-data " method="post">
+<form action="/customer" enctype="multipart/form-data" method="post">
     @csrf
 <input type="text"name="name" placeholder="Name" ><br>
     @error('name')
@@ -20,7 +20,7 @@
 <input type="email"name="email" placeholder="Email" ><br>
     @error('email') {{$message}} @enderror
     <br>
-<input type="number"name="number" placeholder="Phone Number"><br>
+<input type="text"name="number" placeholder="Phone Number"><br>
     @error('number') {{$message}} @enderror
     <br>
 <input type="password"name="password" placeholder="Password"><br>
