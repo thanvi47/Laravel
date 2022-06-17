@@ -9,37 +9,58 @@
 </head>
 <body>
 @include('nav')
-<form action="/customer" enctype="multipart/form-data" method="post">
-    @csrf
-<input type="text"name="name" placeholder="Name" ><br>
-    @error('name')
-    {{$message}}
+<div class="container shadow-lg p-3 mb-5 bg-body rounded d-flex justify-content-center mt-5">
+    <form action="/customer" enctype="multipart/form-data" method="post" class="">
+        @csrf
+        <input type="text"name="name" placeholder="Name" ><br>
+        <div class="bg-danger">  @error('name')
+            {{$message}}
 
-    @enderror
-    <br>
-<input type="email"name="email" placeholder="Email" ><br>
-    @error('email') {{$message}} @enderror
-    <br>
-<input type="text"name="number" placeholder="Phone Number"><br>
-    @error('number') {{$message}} @enderror
-    <br>
-<input type="password"name="password" placeholder="Password"><br>
-    @error('password') {{$message}} @enderror
-    <br>
-{{--    <label >Male</label>--}}
-{{--<input type="checkbox"name="gender" placeholder="Gender"><br>--}}
-{{--    <label >Female</label>--}}
-<input type="Text"name="gender" placeholder="Gender M or F" ><br>
-    @error('gender') {{$message}} @enderror
-    <br>
+            @enderror</div>
+        <br>
+        <input type="email"name="email" placeholder="Email" ><br>
+        <div class="bg-danger">  @error('email')
+            {{$message}}
+
+            @enderror</div>
+        <br>
+        <br>
+        <input type="text"name="number" placeholder="Phone Number"><br>
+        <div class="bg-danger">  @error('number')
+            {{$message}}
+
+            @enderror</div>
+        <br>
+        <br>
+        <input type="password"name="password" placeholder="Password"><br>
+        <div class="bg-danger">  @error('password')
+            {{$message}}
+
+            @enderror</div>
+        <br>
+        <br>
+        {{--    <label >Male</label>--}}
+        {{--<input type="checkbox"name="gender" placeholder="Gender"><br>--}}
+        {{--    <label >Female</label>--}}
+        <input type="Text"name="gender" placeholder="Gender M or F" ><br>
+        <div class="bg-danger">  @error('gender')
+            {{$message}}
+
+            @enderror</div>
+        <br>
+        <br>
 
 
-<lavel>file</lavel>
-    <input type="file" name="image" >
+        <lavel>file</lavel>
+        <input type="file" name="image" >
+        <div class="text-danger">
+            @error('image') {{$message}} @enderror
+        </div>
 
+        <input type="submit"name="" placeholder="" class="d-flex justify-content-center ms-5 mt-2">
+    </form>
+</div>
 
-<input type="submit"name="" placeholder="">
-</form>
 
 
 

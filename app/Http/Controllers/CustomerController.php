@@ -15,17 +15,18 @@ class CustomerController extends Controller
     }
     public function store(Request $request)
     {
-        $new_name= time().'tv.'.$request->file('image')->getClientOriginalExtension();
-        $request->file('image')->storeAs('uploads',$new_name);
+
         $request->validate(
             ['name'=>'required' ,
                 'email'=>'required|email',
                 'number'=>'required|integer',
-                'password'=>'required'
+                'password'=>'required',
+                'image'=>'required'
             ]
 
         );
-
+        $new_name= time().'tv.'.$request->file('image')->getClientOriginalExtension();
+        $request->file('image')->storeAs('uploads',$new_name);
         $customers =new Customer;
         $customers->name=$request['name'];
         $customers->email=$request['email'];

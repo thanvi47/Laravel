@@ -19,7 +19,7 @@ class CustomerSedder extends Seeder
         $customer->name=$faker->name;
         $customer->email=$faker->email;
         $customer->gender='M';
-        $customer->phone_number='123';
+        $customer->phone_number='255';
 //            $faker->phoneNumber;
         $customer->password=$faker->password;
         $customer->image=$faker->image;

@@ -16,8 +16,11 @@
 </style>
 <body>
 @include('nav')
+<div class="container shadow-lg p-3 mb-5 bg-body rounded my-3a">
 <h2>data </h2>
 <br>
+
+
 <table class="table" >
     <thead class="b">
     <a href="{{url('/reg')}}"><button class="btn btn-warning m-2">Add</button></a>
@@ -68,5 +71,6 @@
 
 
 </table>
+</div>
 </body>
 </html>
