@@ -34,30 +34,30 @@
     <th>Action</th>
     </thead>
     <tbody class="b">
-    @foreach( $customers as $customers)
+    @foreach( $customers as $customer)
     <tr class="b">
-        <td>  {{$customers->name}}  </td>
-        <td>  {{$customers->email}} </td>
+        <td>  {{$customer->name}}  </td>
+        <td>  {{$customer->email}} </td>
 
-        <td> {{$customers->phone_number}}   </td>
-        <td>  @if($customers->gender=='M')Male
+        <td> {{$customer->phone_number}}   </td>
+        <td>  @if($customer->gender=='M')Male
             @else Female
             @endif
         </td>
 
 
-        <td>  @if($customers->status==1)Active
+        <td>  @if($customer->status==1)Active
             @else Inactive
             @endif
         </td>
         <td>
             <img src="{{url('uploads/1655234242tv.png')}}" alt=""> </td>
-        <td>  {{$customers->updated_at}} </td>
+        <td>  {{$customer->updated_at}} </td>
         <td>
-            <a href="{{url('/customer/delete')}}/{{$customers->id}}">
+            <a href="{{url('/customer/delete')}}/{{$customer->id}}">
             <button class="btn btn-danger m-1">Delete</button>
             </a>
-            <a href="{{url('/update')}}/{{$customers->id}}">
+            <a href="{{url('/update')}}/{{$customer->id}}">
             <button class="btn btn-primary m-1">Edit</button>
             </a>
         </td>
@@ -71,6 +71,11 @@
 
 
 </table>
+
+    <div class=" " style="width: 10px; height: 10px;">
+        {{$customers->links() }}
+    </div>
 </div>
 </body>
 </html>
+

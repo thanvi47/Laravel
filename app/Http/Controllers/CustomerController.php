@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
+
 //use Illuminate\
 
 class CustomerController extends Controller
@@ -41,12 +42,15 @@ class CustomerController extends Controller
 
 //    print_r($request->all());
     }
-    public function view()
+    public function view(Request $request )
     {
         $customers=Customer::all();
 //        print_r($customers->toArray());
+     $customers=Customer::paginate(5);
         $data= compact('customers');
+
     return view('/customer')->with($data);
+
     }
     public function delete($id){
         $customer = Customer:: find($id)->delete();
