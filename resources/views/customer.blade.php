@@ -17,11 +17,12 @@
 <body>
 @include('nav')
 <div class="container shadow-lg p-3 mb-5 bg-body rounded my-3a">
+
 <h2>data </h2>
 <br>
+{{--    value="{{$search}} "--}}
 
-
-<table class="table" >
+    <table class="table" >
     <thead class="b">
     <a href="{{url('/reg')}}"><button class="btn btn-warning m-2">Add</button></a>
     <th >Name</th>

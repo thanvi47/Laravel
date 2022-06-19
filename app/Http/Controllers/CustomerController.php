@@ -44,13 +44,19 @@ class CustomerController extends Controller
     }
     public function view(Request $request )
     {
-        $customers=Customer::all();
+        $search=$request['search']??"";
+
 //        print_r($customers->toArray());
-     $customers=Customer::paginate(5);
-        $data= compact('customers');
+        if ($search!=null) {
+//            $queryString = Input::get('search');
+            $customers = Customer::where('name', 'LIKE', "%$search%")->orderBy('id')->paginate(5);}
+            else   {
+                $customers=Customer::all();
+                $customers = Customer::paginate(5);
 
-    return view('/customer')->with($data);
-
+    }
+        $data = compact('customers');
+        return view('/customer')->with($data);
     }
     public function delete($id){
         $customer = Customer:: find($id)->delete();
