@@ -21,6 +21,8 @@ class CreateCustomersTable extends Migration
             $table->integer('phone_number');
             $table->string('password');
             $table->boolean('status')->default(1);
+            $table->unsignedBigInteger('dept_id');
+            $table->foreign('dept_id')->references('id')->on('dept');
             $table->timestamps();
         });
     }

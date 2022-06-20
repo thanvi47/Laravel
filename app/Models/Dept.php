@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model
+class Dept extends Model
 {
     use HasFactory;
-    protected $table="customers";
+    protected $table="dept";
     protected $primaryKey="id";
 
 
@@ -21,4 +21,3 @@ class Customer extends Model
         return date('d-M-Y',strtotime($value));
     }
 }
-

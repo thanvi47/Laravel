@@ -20,7 +20,7 @@
 
 <h2>data </h2>
 <br>
-{{--    value="{{$search}} "--}}
+
 
     <table class="table" >
     <thead class="b">
@@ -30,8 +30,9 @@
     <th>Number</th>
     <th>Gender</th>
     <th>Status</th>
+    <th>Department</th>
     <th>Date</th>
-    <th>Image</th>
+
     <th>Action</th>
     </thead>
     <tbody class="b">
@@ -52,7 +53,15 @@
             @endif
         </td>
         <td>
-            <img src="{{url('uploads/1655234242tv.png')}}" alt=""> </td>
+
+            @if($customer->dept_id==1)CSE
+            @else BBA
+            @endif
+
+        </td>
+
+
+
         <td>  {{$customer->updated_at}} </td>
         <td>
             <a href="{{url('/customer/delete')}}/{{$customer->id}}">
@@ -74,8 +83,10 @@
 </table>
 
     <div class=" " style="width: 10px; height: 10px;">
-        {{$customers->links() }}
+{{--        {{$customers->links() }}--}}
     </div>
+{{--    <img class="h-10 w-20" src="{{url('storage/uploads/1655234242tv.png')}}" alt="">--}}
+
 </div>
 </body>
 </html>

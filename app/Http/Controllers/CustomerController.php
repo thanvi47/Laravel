@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dept;
 use Illuminate\Http\Request;
 use App\Models\Customer;
+//use App\Models\Dept;
 
 //use Illuminate\
 
 class CustomerController extends Controller
 {
-    public function index()
-    {
-
-        return view('reg');
+    public function index(Request $request)
+    {    $dept=Dept::all();
+        $data = compact('dept');
+//     p($data);
+        return view('reg')->with($data);
     }
     public function store(Request $request)
     {
@@ -22,12 +25,12 @@ class CustomerController extends Controller
                 'email'=>'required|email',
                 'number'=>'required|integer',
                 'password'=>'required',
-                'image'=>'required'
+//                'image'=>'required'
             ]
 
         );
-        $new_name= time().'tv.'.$request->file('image')->getClientOriginalExtension();
-        $request->file('image')->storeAs('uploads',$new_name);
+//        $new_name= time().'tv.'.$request->file('image')->getClientOriginalExtension();
+//        $request->file('image')->storeAs('uploads',$new_name);
         $customers =new Customer;
         $customers->name=$request['name'];
         $customers->email=$request['email'];
@@ -35,7 +38,8 @@ class CustomerController extends Controller
         $customers->gender=$request['gender'];
 //        $customers->gender=$request['female'];
         $customers->password=md5($request['password']);
-        $customers->image=$request['image'];
+        $customers->dept_id=$request['dept_id'];
+//        $customers->image=$request['image'];
         $customers ->save();
 
         return redirect('/customer');

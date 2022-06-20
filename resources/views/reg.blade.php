@@ -34,11 +34,27 @@
         <br>
         <input type="password"name="password" placeholder="Password"><br>
         <div class="bg-danger">  @error('password')
+{{--            {{$message}}--}}
+
+            @enderror</div>
+        <br> <br><br>
+        <label >Dept</label>
+            <select name="dept_id" id="" >
+                @foreach( $dept    as  $d)
+
+                <option value="{{$d->id}}">{{$d->id}}</option>
+                @endforeach
+            </select>
+
+
+
+
+      <div class="bg-danger">  @error('group')
             {{$message}}
 
             @enderror</div>
-        <br>
-        <br>
+      <br>
+     {{--       <br>
         {{--    <label >Male</label>--}}
         {{--<input type="checkbox"name="gender" placeholder="Gender"><br>--}}
         {{--    <label >Female</label>--}}
@@ -52,7 +68,7 @@
 
 
         <lavel>file</lavel>
-        <input type="file" name="image" >
+{{--        <input type="file" name="image" >--}}
         <div class="text-danger">
             @error('image') {{$message}} @enderror
         </div>
