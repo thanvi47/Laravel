@@ -29,8 +29,8 @@ class CustomerController extends Controller
             ]
 
         );
-//        $new_name= time().'tv.'.$request->file('image')->getClientOriginalExtension();
-//        $request->file('image')->storeAs('uploads',$new_name);
+        $new_name= time().'tv.'.$request->file('image')->getClientOriginalExtension();
+        $request->file('image')->move(public_path('images'), $new_name);
         $customers =new Customer;
         $customers->name=$request['name'];
         $customers->email=$request['email'];
@@ -39,7 +39,7 @@ class CustomerController extends Controller
 //        $customers->gender=$request['female'];
         $customers->password=md5($request['password']);
         $customers->dept_id=$request['dept_id'];
-//        $customers->image=$request['image'];
+        $customers->image=$new_name;
         $customers ->save();
 
         return redirect('/customer');
@@ -56,7 +56,7 @@ class CustomerController extends Controller
             $customers = Customer::where('name', 'LIKE', "%$search%")->orderBy('id')->paginate(5);}
             else   {
                 $customers=Customer::all();
-                $customers = Customer::paginate(5);
+//                $customers = Customer::paginate(5);
 
     }
         $data = compact('customers');

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link  href="{{ url('storage/uploads/1655234242tv.png')}}" rel="shortcut icon">
+    <link  href="{{ asset('images/1.png')   }}" rel="shortcut icon">
     <link rel="icon" href="{{ url('storage/uploads/1655234242tv.png')}}" type="image/gif/png/jpg" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Midone admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title >Document
     </title>
-    <link  href="{{ url('storage/uploads/1655234242tv.png')}}" rel="shortcut icon">
+    <link  href="{{ asset('images/1.png')   }}" rel="shortcut icon">
 {{--    <img src="{{ asset('storage/uploads/1655234242tv.png')}}" alt="" style="height: 30px; width: 50px;">--}}
 </head>
 <body>
@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="">
-                <img src="{{ asset('storage/uploads/1655234242tv.png')}}" alt="" style="height: 30px; width: 50px;">
+                <img src="{{ asset('images/1.png')   }}" alt="" style="height:50px; width: 70px;">
             Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

@@ -22,7 +22,7 @@ class CustomerSedder extends Seeder
         $customer->phone_number='255';
 //            $faker->phoneNumber;
         $customer->password=$faker->password;
-//        $customer->image=$faker->image;
+        $customer->dept_id=1/2;
         $customer->status=$faker->boolean;
 //        $table->timestamps();
         $customer->save();
