@@ -37,7 +37,7 @@
 
     <th>Action</th>
     </thead>
-    <tbody class=" spinner-border text-dark b  text-info">
+    <tbody class="  text-dark b  text-info">
     @foreach( $customers as $customer)
     <tr class="b">
         <td>  {{$customer->name}}  </td>
