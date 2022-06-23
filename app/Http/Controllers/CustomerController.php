@@ -56,7 +56,7 @@ class CustomerController extends Controller
             $customers = Customer::where('name', 'LIKE', "%$search%")->orderBy('id')->paginate(5);}
             else   {
                 $customers=Customer::all();
-//                $customers = Customer::paginate(5);
+                $customers = Customer::paginate(5);
 
     }
         $data = compact('customers');

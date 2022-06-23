@@ -37,7 +37,7 @@
 
     <th>Action</th>
     </thead>
-    <tbody class="  text-dark b  text-info">
+    <tbody class=" spinner-border text-dark b  text-info">
     @foreach( $customers as $customer)
     <tr class="b">
         <td>  {{$customer->name}}  </td>
@@ -86,11 +86,11 @@
 </table>
 
     <div class="pagination pagination-sm justify-content-center " >
-{{--        {{$customers->links() }}--}}
+
     </div>
 {{--    <img class="h-10 w-20" src="{{url('storage/uploads/1655234242tv.png')}}" alt="">--}}
     <img src="{{asset('images/1655917570tv.png')}}" alt="">
-</div>
+</div>{{$customers->links() }}
 </body>
 </html>
 
