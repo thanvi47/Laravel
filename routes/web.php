@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegController;
 use App\Http\Controllers\CustomerController;
 use App\Models\Customer;
+use App\Http\Controllers\SalaryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +33,5 @@ Route::get('get',function (){
    p($session);
 });
 //Route::post('/customer',[CustomerController::class,'upload']);
+Route::resource('salary',SalaryController::class
+);
